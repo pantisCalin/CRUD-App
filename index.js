@@ -28,10 +28,10 @@ app.get('/*', function(req, res) {
 app.use(cors())
 app.use(express.urlencoded({ extended: true}))
 const db = mysql.createPool({
-    host: process.env.MYSQL_HOST || 'localhost',
-    user: process.env.MYSQL_USER || 'root',
-    password: process.env.MYSQL_PASSWORD || 'Sc1ss0rs0ny0u',
-    database: process.env.MYSQL_DATABASE || 'CrudApp'
+    host: process.env.MYSQL_HOST,
+    user: process.env.MYSQL_USER,
+    password: process.env.MYSQL_PASSWORD,
+    database: process.env.MYSQL_DATABASE 
 })
 app.use(express.json())
 app.post('/api/insert', (req, res) => {
